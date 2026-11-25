@@ -61,9 +61,14 @@ function showRandomQuote() {
 
 async function copyQuote() {
   const text = `"${quotes[currentIndex].text}" - ${quotes[currentIndex].author}`;
+  let copied = false;
   try {
-    await navigator.clipboard.writeText(text);
-  } catch {
+    await Promise.race([
+      navigator.clipboard.writeText(text).then(() => { copied = true; }),
+      new Promise((resolve) => setTimeout(resolve, 800))
+    ]);
+  } catch { /* fall through to the legacy path */ }
+  if (!copied) {
     const area = document.createElement("textarea");
     area.value = text;
     document.body.appendChild(area);
