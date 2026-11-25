@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quote of the Day</title>
+  <meta name="description" content="A little vanilla JS app that serves one quote every day, plus a shuffle when you want another. Copy any quote with one tap." />
+  <meta property="og:title" content="Quote of the Day" />
+  <meta property="og:description" content="One quote every day, seeded by the date - plus a shuffle and one-tap copy. Vanilla HTML, CSS and JS." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://malakmo7amed309.github.io/quote-of-the-day/" />
+  <meta property="og:image" content="https://malakmo7amed309.github.io/quote-of-the-day/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="stage">
+    <p class="eyebrow">Quote of the Day</p>
+    <p class="date" id="date"></p>
+
+    <figure class="card" id="card">
+      <blockquote class="quote" id="quote" aria-live="polite"></blockquote>
+      <figcaption class="author" id="author"></figcaption>
+    </figure>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="new-quote" type="button">New quote</button>
+      <button class="btn btn-ghost" id="copy" type="button">Copy</button>
+    </div>
+    <p class="hint">Today's quote is picked by the date - everyone sees the same one. Spacebar shuffles.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
